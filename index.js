@@ -56,5 +56,7 @@ const markerElement = (marker) => {
 };
 
 children.map(marker =>
-  new mapboxgl.Marker(markerElement(marker)).setLngLat([marker.coordinates.long, marker.coordinates.lat]).addTo(map),
+  new mapboxgl.Marker(markerElement(marker))
+    .setLngLat([marker.coordinates.long, marker.coordinates.lat])
+    .addTo(map),
 );
