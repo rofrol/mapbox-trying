@@ -9,14 +9,14 @@ mapboxgl.accessToken =
 const map = new mapboxgl.Map({
   container,
   style: 'mapbox://styles/mapbox/streets-v10',
-  center: [-27.428595, 89.416652],
-  zoom: 3,
+  center: [89.416652, 27.428595],
+  zoom: 9,
 });
 
 const children = [
   {
     coordinates: {
-      lat: -27.428595,
+      lat: 27.428595,
       long: 89.416652,
     },
     properties: {
@@ -26,11 +26,21 @@ const children = [
   },
   {
     coordinates: {
-      lat: -27.472792,
+      lat: 27.572792,
       long: 89.639286,
     },
     properties: {
       imgUrl: 'http://i.imgur.com/89QHSvG.png',
+      iconSize: [60, 60],
+    },
+  },
+  {
+    coordinates: {
+      lat: 27.592087,
+      long: 89.879746,
+    },
+    properties: {
+      imgUrl: 'http://i.imgur.com/hX5iJSk.png',
       iconSize: [60, 60],
     },
   },
@@ -45,6 +55,6 @@ const markerElement = (marker) => {
   return el;
 };
 
-const markerAdded = new mapboxgl.Marker(markerElement(children[0]))
-  .setLngLat([-79.38, 43.65])
-  .addTo(map);
+children.map(marker =>
+  new mapboxgl.Marker(markerElement(marker)).setLngLat([marker.coordinates.long, marker.coordinates.lat]).addTo(map),
+);
