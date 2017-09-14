@@ -60,3 +60,30 @@ children.map(marker =>
     .setLngLat([marker.coordinates.long, marker.coordinates.lat])
     .addTo(map),
 );
+
+
+map.on('load', () => {
+  map.addLayer({
+    id: 'route',
+    type: 'line',
+    source: {
+      type: 'geojson',
+      data: {
+        type: 'Feature',
+        properties: {},
+        geometry: {
+          type: 'LineString',
+          coordinates: children.map(marker => [marker.coordinates.long, marker.coordinates.lat]),
+        },
+      },
+    },
+    layout: {
+      'line-join': 'round',
+      'line-cap': 'round',
+    },
+    paint: {
+      'line-color': '#888',
+      'line-width': 2,
+    },
+  });
+});
