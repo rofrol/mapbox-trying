@@ -21,7 +21,7 @@ const children = [
     },
     properties: {
       imgUrl: 'http://i.imgur.com/vNaYqiQ.png',
-      iconSize: [60, 60],
+      iconSize: [64, 64],
     },
   },
   {
@@ -31,7 +31,7 @@ const children = [
     },
     properties: {
       imgUrl: 'http://i.imgur.com/89QHSvG.png',
-      iconSize: [60, 60],
+      iconSize: [64, 64],
     },
   },
   {
@@ -41,7 +41,7 @@ const children = [
     },
     properties: {
       imgUrl: 'http://i.imgur.com/hX5iJSk.png',
-      iconSize: [60, 60],
+      iconSize: [64, 64],
     },
   },
 ];
